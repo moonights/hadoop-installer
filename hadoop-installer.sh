@@ -40,7 +40,7 @@ Available link: http://mirrors.hust.edu.cn/apache/hadoop/common/hadoop-2.6.0/had
         fi
     done
 
-    read -p "Tell me the JAVA_HOME(default is /usr/lib/jvm/java-6-openjdk): " JAVA_HOME
+    read -p "Tell me the JAVA_HOME(/usr/lib/jvm/java-6-openjdk): " JAVA_HOME
     if [ ! "$JAVA_HOME" ]
     then
         JAVA_HOME=/usr/lib/jvm/java-6-openjdk
@@ -95,8 +95,8 @@ function install_pseudo_distributed()
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
     <property>
-        <name>fs.defaultFS</name>
-        <value>hdfs://localhost:9000</value>
+        <name>dfs.replication</name>
+        <value>1</value>
     </property>
 </configuration>'
     echo "$hdfs_site" > $HDFS_SITE_FILE
@@ -114,7 +114,7 @@ echo "+--------------------------+"
 echo " 1 Standalone Mode"
 echo " 2 Pseudo-distributed Mode"
 echo "+--------------------------+"
-read -p "Choose the mode you use(default is standalone mode): " choice
+read -p "Choose the mode you use(standalone mode): " choice
 
 if [ ! "$choice" ]
 then
