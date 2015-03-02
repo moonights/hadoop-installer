@@ -19,7 +19,7 @@ Dependencies
 sudo apt-get install ssh rsync openjdk-6-jdk
 ```
 
-Standalone Mode Test
+Standalone mode test
 ===
 
 ```
@@ -30,7 +30,7 @@ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep i
 cat output/*
 ```
 
-Pseudo-Distributed Mode Test
+Pseudo-distributed mode test
 ===
 
 ```
