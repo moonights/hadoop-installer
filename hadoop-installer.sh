@@ -109,7 +109,6 @@ function install_pseudo_distributed()
 # Main entrance
 check
 
-mode=$1
 echo "+--------------------------+"
 echo " 1 Standalone Mode"
 echo " 2 Pseudo-distributed Mode"
