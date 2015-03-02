@@ -63,6 +63,28 @@ rm -r /tmp/hadoop-USERNAME/data/*
 ./sbin/start-dfs.sh
 ```
 
+Extended scripts
+===
+
+hadoop-eclipse-plugin-installer
+---
+
+### Usage
+
+```
+./hadoop-eclipse-plugin-installer.sh
+```
+
+### Dependencies
+
+```
+sudo apt-get install ant
+```
+
+### How to use this plugin
+
+<http://www.linuxidc.com/Linux/2015-01/112369.htm>(written in Chinese)
+
 License
 ===
 
