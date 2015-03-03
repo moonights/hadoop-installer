@@ -67,6 +67,11 @@ function register_hadoop()
     else
         sed -i "s:^export HADOOP_HOME=.*$:export HADOOP_HOME=$BASE_DIR/$HADOOP_DIR:" ~/.bashrc
     fi
+
+    if [ "`grep '$HADOOP_HOME/bin' ~/.bashrc  | wc -l`" == "0" ]
+    then
+        echo 'export PATH=$HADOOP_HOME/bin:$PATH' >> ~/.bashrc
+    fi
 }
 
 function install_standalone()
