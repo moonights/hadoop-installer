@@ -58,8 +58,8 @@ Append `export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_PREFIX}/lib/native` to the 
 
 ```
 sbin/stop-dfs.sh
-rm -r /tmp/hadoop-USERNAME/name/*
-rm -r /tmp/hadoop-USERNAME/data/*
+rm -r /tmp/hadoop-USERNAME/dfs/name/*
+rm -r /tmp/hadoop-USERNAME/dfs/data/*
 bin/hdfs namenode -format
 sbin/start-dfs.sh
 ```
