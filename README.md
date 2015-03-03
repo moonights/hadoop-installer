@@ -27,7 +27,7 @@ Standalone mode test
 cd hadoop-2.*/
 mkdir input
 cp etc/hadoop/*.xml input
-bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep input output 'dfs[a-z.]+'
+hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep input output 'dfs[a-z.]+'
 cat output/*
 ```
 
@@ -39,12 +39,12 @@ cd hadoop-2.*/
 mkdir input
 cp etc/hadoop/*.xml input
 
-bin/hdfs namenode -format
-sbin/start-dfs.sh
-bin/hdfs dfs -put input /
-bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep /input /output 'dfs[a-z.]+'
-bin/hdfs dfs -cat output/*
-sbin/stop-dfs.sh
+hdfs namenode -format
+start-dfs.sh
+hdfs dfs -put input /
+hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep /input /output 'dfs[a-z.]+'
+hdfs dfs -cat output/*
+stop-dfs.sh
 ```
 
 Possible problems 
@@ -57,11 +57,11 @@ Append `export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_PREFIX}/lib/native` to the 
 - could only be replicated to 0 nodes instead of minReplication (=1).  There are 0 datanode(s) running and no node(s) are excluded in this operation
 
 ```
-sbin/stop-dfs.sh
+stop-dfs.sh
 rm -r /tmp/hadoop-USERNAME/dfs/name/*
 rm -r /tmp/hadoop-USERNAME/dfs/data/*
-bin/hdfs namenode -format
-sbin/start-dfs.sh
+hdfs namenode -format
+start-dfs.sh
 ```
 
 Extended scripts
