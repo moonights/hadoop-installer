@@ -20,7 +20,7 @@ Dependencies
 sudo apt-get install ssh rsync openjdk-6-jdk
 ```
 
-Standalone mode test
+Standalone mode tests
 ===
 
 ```
@@ -31,7 +31,7 @@ hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep input
 cat output/*
 ```
 
-Pseudo-distributed mode test
+Pseudo-distributed mode tests
 ===
 
 ```
@@ -85,6 +85,24 @@ sudo apt-get install ant
 ### How to use this plugin
 
 <http://www.linuxidc.com/Linux/2015-01/112369.htm>(written in Chinese)
+
+hive-installer
+---
+
+### Usage
+
+```
+./hive-installer.sh
+source ~/.bashrc
+```
+
+### Tests
+
+```
+hive
+hive> show databases;
+hive> show tables;
+```
 
 License
 ===
