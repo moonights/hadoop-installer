@@ -1,3 +1,8 @@
 hadoop*.tar.gz
 hadoop*/
 hadoop2x-eclipse-plugin/
+apache-hive-*.tar.gz
+apache-hive*/
+
+*.log
+metastore_db/
