@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+BASE_DIR=`pwd`
 JAVA_HOME=""
 HADOOP_DIR=""
 HADOOP_TAR=hadoop-2.*.tar.gz
@@ -58,6 +59,16 @@ function uncompress_hadoop_tar()
     tar xzf $HADOOP_TAR
 }
 
+function register_hadoop()
+{
+    if [ "`grep '^export HADOOP_HOME=' ~/.bashrc  | wc -l`" == "0" ]
+    then
+        echo "export HADOOP_HOME=$BASE_DIR/$HADOOP_DIR" >> ~/.bashrc
+    else
+        sed -i "s:^export HADOOP_HOME=.*$:export HADOOP_HOME=$BASE_DIR/$HADOOP_DIR:" ~/.bashrc
+    fi
+}
+
 function install_standalone()
 {
     uncompress_hadoop_tar
@@ -74,6 +85,8 @@ function install_standalone()
 <configuration>
 </configuration>'
     echo "$hdfs_site" > $HDFS_SITE_FILE
+
+    register_hadoop
 }
 
 function install_pseudo_distributed()
@@ -104,6 +117,8 @@ function install_pseudo_distributed()
     ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
     ssh-add ~/.ssh/id_dsa
     cat ~/.ssh/id_dsa.pub > ~/.ssh/authorized_keys
+
+    register_hadoop
 }
 
 # Main entrance

@@ -10,6 +10,7 @@ Usage
 git clone https://github.com/zhangxiaoyang/hadoop-installer
 cd hadoop-installer
 ./hadoop-install.sh
+source ~/.bashrc
 ```
 
 Dependencies
@@ -56,11 +57,11 @@ Append `export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_PREFIX}/lib/native` to the 
 - could only be replicated to 0 nodes instead of minReplication (=1).  There are 0 datanode(s) running and no node(s) are excluded in this operation
 
 ```
-./sbin/stop-dfs.sh
+sbin/stop-dfs.sh
 rm -r /tmp/hadoop-USERNAME/name/*
 rm -r /tmp/hadoop-USERNAME/data/*
-./bin/hdfs namenode -format
-./sbin/start-dfs.sh
+bin/hdfs namenode -format
+sbin/start-dfs.sh
 ```
 
 Extended scripts
