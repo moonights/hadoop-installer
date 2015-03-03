@@ -70,7 +70,7 @@ function register_hadoop()
 
     if [ "`grep '$HADOOP_HOME/bin' ~/.bashrc  | wc -l`" == "0" ]
     then
-        echo 'export PATH=$HADOOP_HOME/bin:$PATH' >> ~/.bashrc
+        echo 'export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH' >> ~/.bashrc
     fi
 }
 
