@@ -17,7 +17,7 @@ Dependencies
 ===
 
 ```
-sudo apt-get install ssh rsync openjdk-6-jdk
+sudo apt-get install ssh rsync openjdk-7-jdk
 ```
 
 Standalone mode tests
