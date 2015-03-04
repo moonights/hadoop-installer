@@ -103,6 +103,25 @@ hive
 hive> show databases;
 hive> show tables;
 ```
+pig-installer
+---
+
+### Usage
+
+```
+./pig-installer.sh
+source ~/.bashrc
+```
+
+### Tests
+
+```
+pig
+grunt> ls;
+grunt> A = load '/etc/passwd' using PigStorage(':'); 
+grunt> B = foreach A generate $0 as id; 
+grunt> dump B; 
+```
 
 License
 ===

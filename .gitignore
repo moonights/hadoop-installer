@@ -3,6 +3,8 @@ hadoop*/
 hadoop2x-eclipse-plugin/
 apache-hive-*.tar.gz
 apache-hive*/
+pig-*.tar.gz
+pig-*/
 
 *.log
 metastore_db/
