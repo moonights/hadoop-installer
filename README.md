@@ -116,7 +116,7 @@ source ~/.bashrc
 ### Tests
 
 ```
-pig
+pig -x local
 grunt> ls;
 grunt> A = load '/etc/passwd' using PigStorage(':'); 
 grunt> B = foreach A generate $0 as id; 
