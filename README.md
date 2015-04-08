@@ -66,7 +66,8 @@ start-dfs.sh
 
 - Can not run `hadoop job -list`
 
-```Exception in thread "main" java.lang.NullPointerException
+```
+Exception in thread "main" java.lang.NullPointerException
     at org.apache.hadoop.mapreduce.tools.CLI.listJobs(CLI.java:511)
     at org.apache.hadoop.mapreduce.tools.CLI.run(CLI.java:319)
     at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)
