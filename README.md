@@ -56,13 +56,30 @@ Append `export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_PREFIX}/lib/native` to the 
 
 - could only be replicated to 0 nodes instead of minReplication (=1).  There are 0 datanode(s) running and no node(s) are excluded in this operation
 
-```
 stop-dfs.sh
 rm -r /tmp/hadoop-USERNAME/dfs/name/*
 rm -r /tmp/hadoop-USERNAME/dfs/data/*
 hdfs namenode -format
 start-dfs.sh
 ```
+- Can not run `hadoop job -list`
+
+```Exception in thread "main" java.lang.NullPointerException
+    at org.apache.hadoop.mapreduce.tools.CLI.listJobs(CLI.java:511)
+    at org.apache.hadoop.mapreduce.tools.CLI.run(CLI.java:319)
+    at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)
+    at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:84)
+    at org.apache.hadoop.mapred.JobClient.main(JobClient.java:1237)
+```
+
+Append
+
+``` <property>
+<name>mapreduce.framework.name</name>
+<value>yarn</value>
+</property>
+```
+to `etc/hadoop/mapred-site.xml`
 
 Extended scripts
 ===
