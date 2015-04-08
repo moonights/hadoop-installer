@@ -62,6 +62,7 @@ rm -r /tmp/hadoop-USERNAME/dfs/data/*
 hdfs namenode -format
 start-dfs.sh
 ```
+
 - Can not run `hadoop job -list`
 
 ```Exception in thread "main" java.lang.NullPointerException
@@ -80,6 +81,8 @@ Append
 </property>
 ```
 to `etc/hadoop/mapred-site.xml`
+
+and restart hadoop(stop-all.sh && start-all.sh)
 
 Extended scripts
 ===
