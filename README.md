@@ -77,9 +77,10 @@ Exception in thread "main" java.lang.NullPointerException
 
 Append
 
-``` <property>
-<name>mapreduce.framework.name</name>
-<value>yarn</value>
+```
+<property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
 </property>
 ```
 to `etc/hadoop/mapred-site.xml`
