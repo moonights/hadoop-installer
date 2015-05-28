@@ -96,6 +96,18 @@ and append
 ```
 to etc/hadoop/yarn-site.xml. Then restart hadoop(stop-all.sh && start-all.sh)
 
+- `java.lang.OutOfMemoryError: GC overhead limit exceeded`
+
+Append
+
+```
+<property>  
+    <name>mapred.child.java.opts</name>  
+    <value>-XX:-UseGCOverheadLimit</value>  
+</property>  
+```
+to `etc/hadoop/mapred-site.xml`
+
 Extended scripts
 ===
 
