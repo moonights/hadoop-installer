@@ -85,7 +85,16 @@ Append
 ```
 to `etc/hadoop/mapred-site.xml`
 
-and restart hadoop(stop-all.sh && start-all.sh)
+and append
+
+```
+<property>  
+    <name>yarn.nodemanager.aux-services</name>  
+    <value>mapreduce_shuffle</value>  
+</property>  
+
+```
+to etc/hadoop/yarn-site.xml. Then restart hadoop(stop-all.sh && start-all.sh)
 
 Extended scripts
 ===
